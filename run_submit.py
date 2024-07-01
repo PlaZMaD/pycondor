@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 output_dir = '/eos/experiment/ship/user/ekurbato/condor_output/'
-log_dir = "/eos/experiment/ship/user/ekurbato/condor/logs"
+log_dir = "/afs/cern.ch/work/e/ekurbato/public/condor_logs"
 subdir = 'test_run'
 output_dir = os.path.join(output_dir, subdir)
 input_files_db = pd.read_csv('input_for_muon_prod.txt', header=None)
@@ -12,6 +12,8 @@ input_files_db.columns=['path', 'nEvents', 'id']
 exe_dir = 'exe/'
 print(input_files_db)
 
+credd = htcondor.Credd()
+credd.add_user_cred(htcondor.CredTypes.Kerberos, None)
 
 job_template = {
     "executable": "test.sh",      
@@ -21,7 +23,8 @@ job_template = {
     "output": os.path.join(log_dir, "fs-$(ProcId).out"),  
     "error": os.path.join(log_dir, "fs-$(ProcId).err"),  
     "log": os.path.join(log_dir, "cat-$(ProcId).log"),              
-    "request_cpus": "1",             
+    "request_cpus": "1",
+    'MY.SendCredential': True,         
 #    "request_memory": "4Gi",       
 #    "request_disk": "1Gi",           
 }
