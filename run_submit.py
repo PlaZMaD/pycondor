@@ -18,7 +18,7 @@ credd = htcondor.Credd()
 credd.add_user_cred(htcondor.CredTypes.Kerberos, None)
 
 
-files = glob.glob(log_dir)
+files = glob.glob(os.path.join(log_dir, '*'))
 for f in files:
     os.remove(f)
 
