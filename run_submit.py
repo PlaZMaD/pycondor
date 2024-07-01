@@ -29,7 +29,7 @@ for fileN, path in enumerate(input_files_db['path'].to_list()):
         "log": os.path.join(log_dir, f"cat-{fileN}-$(ProcId).log"),              
         "request_cpus": "1",
         'MY.SendCredential': True,
-        'environment' :f "EOS_DATA={output_dir} inputFile={path}"#SHIP_CVMFS_SETUP_FILE=$ENV(SHIP_CVMFS_SETUP_FILE) FAIRSHIP_DIR=$ENV(FAIRSHIP) MAGNET_GEO=$ENV(MAGNET_GEO)"
+        'environment' :f"EOS_DATA={output_dir} inputFile={path}"#SHIP_CVMFS_SETUP_FILE=$ENV(SHIP_CVMFS_SETUP_FILE) FAIRSHIP_DIR=$ENV(FAIRSHIP) MAGNET_GEO=$ENV(MAGNET_GEO)"
              
     #    "request_memory": "4Gi",       
     #    "request_disk": "1Gi",           
