@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 output_dir = '/eos/experiment/ship/user/ekurbato/condor_output/'
-log_dir = "/afs/cern.ch/work/e/ekurbato/public/condor_logs"
+log_dir = "/eos/experiment/ship/user/ekurbato/condor/logs"
 subdir = 'test_run'
 output_dir = os.path.join(output_dir, subdir)
 input_files_db = pd.read_csv('input_for_muon_prod.txt', header=None)
