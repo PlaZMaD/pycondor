@@ -20,9 +20,9 @@ job_template = {
     "arguments": "$(input_file_name)",          # we will pass in the value for this macro via itemdata
     "transfer_input_files": "$(input_file)",    # we also need HTCondor to move the file to the execute node
     "should_transfer_files": "yes",             # force HTCondor to transfer files even though we're running entirely inside a container (and it normally wouldn't need to)
-    "output": os.path.join(log_dir, "fs-$(ProcId).out"),  
-    "error": os.path.join(log_dir, "fs-$(ProcId).err"),  
-    "log": os.path.join(log_dir, "cat-$(ProcId).log"),              
+    "output": os.path.join(log_dir, "fs-$(ClusterId)-$(ProcId).out"),  
+    "error": os.path.join(log_dir, "fs-$(ClusterId)-$(ProcId).err"),  
+    "log": os.path.join(log_dir, "cat-$(ClusterId)-$(ProcId).log"),              
     "request_cpus": "1",
     'MY.SendCredential': True,         
 #    "request_memory": "4Gi",       
