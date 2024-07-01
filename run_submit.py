@@ -35,7 +35,7 @@ for fileN, path in enumerate(input_files_db['path'].to_list()):
     #    "request_disk": "1Gi",           
     }
 
-    iter_data = [{'input_file_name': path} for path in range(2)]
+    iter_data = [{'input_file_name': str(path)} for path in range(2)]
     schedd = htcondor.Schedd()
     cat_job = htcondor.Submit(job_template)
     submit_result = schedd.submit(cat_job, itemdata = iter(iter_data))  # submit one job for each item in the itemdata
