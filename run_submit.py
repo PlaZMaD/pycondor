@@ -2,6 +2,7 @@ import htcondor
 import classad
 import pandas as pd
 import os
+import glob
 
 
 output_dir = '/eos/experiment/ship/user/ekurbato/condor_output/'
@@ -17,7 +18,9 @@ credd = htcondor.Credd()
 credd.add_user_cred(htcondor.CredTypes.Kerberos, None)
 
 
-os.remove(os.path.join(log_dir,"*"))
+files = glob.glob(log_dir)
+for f in files:
+    os.remove(f)
 
 for fileN, path in enumerate(input_files_db['path'].to_list()):
 
