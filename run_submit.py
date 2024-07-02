@@ -7,7 +7,7 @@ import numpy as np
 
 run_tag = "first_run"
 debug = True
-extra_fs_args = "--fastMuon --MuonBack"
+extra_fs_args = "--FastMuon --MuonBack"
 path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
 
 events_per_job = 250000
