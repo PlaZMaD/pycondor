@@ -7,4 +7,4 @@ set -ux
 echo "Starting script."
 # temp=`echo $5 | tr -d '\''`
 mkdir -p $out_dir
-python $FAIRSHIP/macro/run_simScript.py $5 --nEvents $4 --firstEvent $3 -f $2 --output $out_dir
+python $FAIRSHIP/macro/run_simScript.py $extra_fs_args --nEvents $4 --firstEvent $3 -f $2 --output $out_dir
