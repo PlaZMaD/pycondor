@@ -6,7 +6,7 @@ import glob
 import numpy as np
 
 run_tag = "first_run"
-debug = True
+debug = False
 extra_fs_args = "--FastMuon --MuonBack"
 path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
 
@@ -17,7 +17,7 @@ events_per_job = 250000
 output_dir = '/eos/experiment/ship/user/ekurbato/condor_output/'
 log_dir = "/afs/cern.ch/work/e/ekurbato/public/condor_logs/"
 
-output_dir = os.path.join(output_dir, run_tag)
+# output_dir = os.path.join(output_dir, run_tag)
 input_files_db = pd.read_csv('input_for_muon_prod.txt', header=None)
 input_files_db.columns=['path', 'nEvents', 'id']
 
