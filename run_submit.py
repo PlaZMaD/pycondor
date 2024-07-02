@@ -39,7 +39,7 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
 
     job_template = {
         "executable": "start_FS.sh",      
-        "arguments": f"{path_to_fs} $(input_file_name) $(start_event) $(nEvents) $STRING(\"$(extra_fs_args)\")",          # we will pass in the value for this macro via itemdata
+        "arguments": f"{path_to_fs} $(input_file_name) $(start_event) $(nEvents) $STRING($(extra_fs_args))",          # we will pass in the value for this macro via itemdata
         "transfer_input_files": "$(input_file)",    # we also need HTCondor to move the file to the execute node
         "should_transfer_files": "yes",             # force HTCondor to transfer files even though we're running entirely inside a container (and it normally wouldn't need to)
         "output": os.path.join(log_dir, f"fs-{fid}-$(ProcId).out"),  
