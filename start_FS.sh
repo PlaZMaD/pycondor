@@ -1,7 +1,8 @@
 #!/bin/bash
 cd $1
 source /afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh
-eval $(alienv load FairShip/latest --no-refresh)
+#eval $(alienv load FairShip/latest --no-refresh)
+source start_ali.sh
 cd -
 set -ux
 echo "Starting script."
