@@ -1,6 +1,6 @@
 #!/bin/bash
-source /afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh
 cd $1
+source /afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh
 eval $(alienv load FairShip/latest --no-refresh)
 cd -
 set -ux
