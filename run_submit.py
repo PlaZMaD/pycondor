@@ -5,7 +5,7 @@ import os
 import glob
 import numpy as np
 
-run_tag = "first_run"
+run_tag = "baseline"
 debug = False
 extra_fs_args = "--FastMuon --MuonBack"
 path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
@@ -40,8 +40,6 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
     job_template = {
         "executable": "start_FS.sh",      
         "arguments": f"{path_to_fs} $(input_file_name) $(start_event) $(nEvents) $(extra_fs_args)",          # we will pass in the value for this macro via itemdata
-        "transfer_input_files": "$(input_file)",    # we also need HTCondor to move the file to the execute node
-        "should_transfer_files": "yes",             # force HTCondor to transfer files even though we're running entirely inside a container (and it normally wouldn't need to)
         "output": os.path.join(log_dir, f"fs-{fid}-$(ProcId).out"),  
         "error": os.path.join(log_dir, f"fs-{fid}-$(ProcId).err"),  
         "log": os.path.join(log_dir, f"cat-{fid}-$(ProcId).log"),              
