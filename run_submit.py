@@ -9,6 +9,7 @@ run_tag = "baseline"
 debug = False
 extra_fs_args = "--FastMuon --MuonBack"
 path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
+path_to_env = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh"
 
 events_per_job = 250000
 
