@@ -1,7 +1,7 @@
 #!/bin/bash
 cd $1
 source /afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh
-eval $(alienv load FairShip/latest-master-release --no-refresh)
+eval $(alienv -a slc9_x86-64 load FairShip/latest-master-release --no-refresh)
 # source start_ali.sh
 cd -
 set -ux
