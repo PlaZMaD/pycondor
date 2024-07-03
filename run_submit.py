@@ -49,8 +49,8 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
         "request_cpus": "1",
         'MY.SendCredential': True,
         'environment' :f'"out_dir={os.path.join(output_dir, run_tag, str(fid))}/$(subjob)"',             
-        "request_memory": "4Gi",       
-        "request_disk": "1Gi",           
+        "request_memory": "4096MB",       
+        "request_disk": "1024MB",           
         "JobFlavour": "testmatch",
     }
 
@@ -75,7 +75,7 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
     if debug:
         break
     print(f"{fid} started")
-    time.sleep(2)
+    time.sleep(1)
 
 def run_connmon(files, jobs_per_file=50, output=None):
     pass
