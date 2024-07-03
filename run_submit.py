@@ -7,7 +7,7 @@ import numpy as np
 import time
 
 run_tag = "baseline"
-debug = False
+debug = True
 extra_fs_args = "--FastMuon --MuonBack"
 path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
 path_to_env = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh"
@@ -45,6 +45,7 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
         "output": os.path.join(log_dir, f"fs-{fid}-$(ProcId).out"),  
         "error": os.path.join(log_dir, f"fs-{fid}-$(ProcId).err"),  
         "log": os.path.join(log_dir, f"cat-{fid}-$(ProcId).log"),              
+        "should_transfer_files": "no", 
         "request_cpus": "1",
         'MY.SendCredential': True,
         'environment' :f'"out_dir={os.path.join(output_dir, run_tag, str(fid))}/$(subjob)"'# inputFile={lPath}"'#SHIP_CVMFS_SETUP_FILE=$ENV(SHIP_CVMFS_SETUP_FILE) FAIRSHIP_DIR=$ENV(FAIRSHIP) MAGNET_GEO=$ENV(MAGNET_GEO)"

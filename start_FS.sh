@@ -4,5 +4,5 @@ eval $(alienv -w $2/sw -a slc9_x86-64 load FairShip/latest-master-release --no-r
 set -ux
 echo "Starting script."
 mkdir -p $out_dir
-python $FAIRSHIP/macro/run_simScript.py ${@:6} --nEvents $5 --firstEvent $4 -f $3
+python $FAIRSHIP/macro/run_simScript.py ${@:6} --nEvents $5 --firstEvent $4 -f $3 --output `pwd`
 cp *.root $out_dir 
