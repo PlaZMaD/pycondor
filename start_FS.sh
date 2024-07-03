@@ -1,7 +1,7 @@
 #!/bin/bash
 #cd $2
 source $1
-eval $(alienv -a -w $2/sw slc9_x86-64 load FairShip/latest-master-release --no-refresh)
+eval $(alienv -w $2/sw -a slc9_x86-64 load FairShip/latest-master-release --no-refresh)
 #cd -
 set -ux
 echo "Starting script."
