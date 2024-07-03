@@ -41,8 +41,8 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
     job_template = {
         "executable": "start_FS.sh",      
         "arguments": f"{path_to_env} {path_to_fs} $(input_file_name) $(start_event) $(nEvents) $(extra_fs_args)",          # we will pass in the value for this macro via itemdata
-        "output": f"fs-{fid}-$(ProcId).out", #os.path.join(log_dir, f"fs-{fid}-$(ProcId).out"),  
-        "error": f"fs-{fid}-$(ProcId).err", #os.path.join(log_dir, f"fs-{fid}-$(ProcId).err"),  
+        "output": os.path.join(log_dir, f"fs-{fid}-$(ProcId).out"),  
+        "error": os.path.join(log_dir, f"fs-{fid}-$(ProcId).err"),  
         "log": os.path.join(log_dir, f"cat-{fid}-$(ProcId).log"),              
         "request_cpus": "1",
         'MY.SendCredential': True,
