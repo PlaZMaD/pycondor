@@ -51,7 +51,7 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
         'environment' :f'"out_dir={os.path.join(output_dir, run_tag, str(fid))}/$(subjob)"',             
         "request_memory": "4096MB",       
         "request_disk": "1024MB",           
-        "JobFlavour": "testmatch",
+        "+JobFlavour": "testmatch",
     }
 
     iter_data = []#[{'input_file_name': str(path), 'subjob': str(subjob)} for subjob, path in enumerate(range(2))]
