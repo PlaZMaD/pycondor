@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import glob
 import numpy as np
+import time
 
 run_tag = "baseline"
 debug = False
@@ -22,7 +23,7 @@ log_dir = "/afs/cern.ch/work/e/ekurbato/public/condor_logs/"
 input_files_db = pd.read_csv('input_for_muon_prod.txt', header=None)
 input_files_db.columns=['path', 'nEvents', 'id']
 
-print(input_files_db)
+#print(input_files_db)
 
 credd = htcondor.Credd()
 credd.add_user_cred(htcondor.CredTypes.Kerberos, None)
@@ -72,6 +73,8 @@ for _, row in input_files_db.iterrows():#fileN, path in enumerate(input_files_db
 
     if debug:
         break
+    print(f"{fid} started")
+    time.sleep(2)
 
 def run_connmon(files, jobs_per_file=50, output=None):
     pass
