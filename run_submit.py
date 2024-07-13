@@ -6,11 +6,11 @@ import glob
 import numpy as np
 import time
 
-run_tag = "baseline"
+run_tag = "short"
 debug = False
-extra_fs_args = "--FastMuon --MuonBack"
-path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master"
-path_to_env = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/master/setUp.sh"
+extra_fs_args = "--FastMuon --MuonBack --scName short"
+path_to_fs = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/sc_fieldmap/"
+path_to_env = "/afs/cern.ch/work/e/ekurbato/public/fs_setups/sc_fieldmap/setUp.sh"
 
 events_per_job = 250000
 
